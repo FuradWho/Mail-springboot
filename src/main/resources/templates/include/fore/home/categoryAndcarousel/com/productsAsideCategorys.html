@@ -1,0 +1,10 @@
+<div th:fragment="html" xmlns:th="http://www.thymeleaf.org">
+    <div  :cid="c.categoryId" class="productsAsideCategorys" v-for="c in categories">
+        <div class="row show1" v-for="ps in c.productsByRow">
+            <a :href="'product?pid='+p.productId" v-for="p in ps" v-if="p.productSubTitle.length!=0">
+                {{p.productSubTitle | subTitleFilter}}
+            </a>
+            <div class="seperator"></div>
+        </div>
+    </div>
+</div>
